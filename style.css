@@ -28,6 +28,9 @@ body{
     text-decoration: none;
     font-weight: 600;
 }
+.navbar{
+    margin-left: 100px;
+}
 .navbar a{
     font-size: 18px;
     color: #ededed;
@@ -249,7 +252,7 @@ body{
 }
 .achieve .cnt1{
     position: relative;
-    left:400px;
+    left:380px;
     top:120px;
     border: 8px solid;
     border-radius: 100px;
@@ -268,7 +271,7 @@ body{
     position: relative;
     width: 85%;
     top: 90px;
-    left: 60px;
+    left: 50px;
     font-size: 25px;
     letter-spacing: 1px;
     line-height: 25px;
@@ -315,11 +318,11 @@ body{
 }
 .Projects h2{
     margin-left:450px;
-    margin-top: 100px;
-    padding-left: 70px;
+    margin-top: 120px;
+    padding-left: 50px;
     padding-top: 120px;
     font-size: 40px;
-    background-image: url(heroSectionBackground.png);
+    background-image: url(item1.png);
     width: 28%;
     height: 350px;
     border-radius: 50px;
@@ -334,4 +337,9 @@ body{
 .Projects a{
     text-decoration: none;
     color: white;
+}
+@media only screen and (max-width:900px){
+    .home{
+        flex-direction: column;
+    }
 }

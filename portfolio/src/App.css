@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Jost',sans-serif;
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px; 
+}
+
+.header h1 {
+  margin-left: 30px;
+}
+
+.header .routes ul {
+  display: flex;
+  gap: 30px; 
+  list-style: none; 
+}
+
+.header .routes ul li {
+  margin: 0; 
+}
+
+.header .routes ul li a {
+  text-decoration: none; 
+  color: black; 
+  font-size: 18px; 
+}
+.header .routes ul li a:hover{
+  color: orange;
+}
+.header .routes {
+  margin-right: 30px; 
+}
+.home-content{
+  display: flex;
+}
+.home-content .details{
+  width: 350px;
+  margin-left: 180px;
+  margin-top: 150px;
+  font-size: 20px;
+}
+.home-content .details h1{
+  font-size: 45px;
+  width: 500px;
+}
+.name{
+  color: orange;
+}
+.home-content .details button{
+  margin-top: 50px;
+  height: 50px;
+  width:120px;
+  background-color: black;
+  color: orange;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+  border-color: orange;
+  border-width: 3px;
+}
+.home-content .details button:hover{
+  cursor: pointer;
+  background-color: orange;
+  color: black;
+  border-color: black;
+  border-width: 3px;
+  transition: 0.2s;
+}
+.home-content .logos{
+  display: flex;
+  padding-top: 45px;
+  gap: 25px;
+}
+.home-content .details .logos img{
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+}
+.home-content .details .logos img:hover{
+  border-color: orange;
+  border-width: 3px;
+  border-style: solid;
+  transition: 0.1s;
+}
+.home-content img{
+  margin-top: 35px;
+  margin-right: 180px;
+  margin-left: auto;
+  border-radius: 40%;
+}
+.about{
+  padding-top: 100px;
+  padding-left: 90px;
+  background-color: rgb(255, 182, 47);
+  height:700px;
+}
+.about h1{
+  color: black;
+  font-size: 35px;
+}
+.about .about-content{
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 3px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 60px;
+  margin-left: 70px;
+  margin-bottom: 100px;
+  padding: 40px;
+  width: 83%;
+  height: 300px;
+} 
+.about .about-content p{
+  line-height: 40px;
+}
+.about .about-img{
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+.projects{
+  padding-left: 90px;
+  padding-top: 100px;
+  background-color: antiquewhite;
+  height: 750px;
+}
+.projects h1{
+  color: rgb(255, 145, 0);
+}
+.projects .project-img{
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+.projects .project-images{
+  display: flex;
+  margin-top: 20px;
+}
+.projects .project-images .imgs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: orange;
+}
+.projects .project-images img{
+  margin-left: 75px;
+  margin-top: 50px;
+  width: 350px;
+  height: 300px;
+  border-radius: 20px;
+}
+.projects .project-images p{
+  width: 350px;
+  margin-left: 75px;
+  margin-top: 30px;
+  font-weight:500;
+}
+.skills{
+  padding-left: 90px;
+  padding-top: 100px;
+  height: 900px;
+}
+.skills h1{
+  font-size: 50px;
+}
+.skills img{
+  margin-left: 160px;
+  width: 1000px;
+  height: 600px;
+}
+.achievements{
+  padding-left: 90px;
+  padding-top: 100px;
+  background-color: rgb(255, 204, 102);
+  height:580px;
+}
+.achievements .achievement-head{
+  display: flex;
+  align-items: center;
+}
+.achievements .achievement-img{
+  width:50px;
+  height:50px;
+  margin-left: 20px;
+  border-radius: 40px;
+}
+.achievements .achievement-list{
+  margin-left: 250px;
+  margin-top: 50px;
+  line-height: 60px;
+  font-size: 20px;
+}
+.contact{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+}
+.contact h2{
+  margin-top: 30px;
+  margin-left: 47%;
+}
+.contact .contact-content{
+  margin-left: 340px;
+  height: 100px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.contact .contact-content a{
+  color: white;
+}

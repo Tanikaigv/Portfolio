@@ -43,9 +43,11 @@
 }
 .home-content .details{
   width: 350px;
-  margin-left: 180px;
+  margin-left: auto;
   margin-top: 150px;
   font-size: 20px;
+  display: inline-block;
+  flex-wrap: wrap;
 }
 .home-content .details h1{
   font-size: 45px;
@@ -99,98 +101,143 @@
   border-radius: 40%;
 }
 .about{
-  padding-top: 100px;
-  padding-left: 90px;
-  background-color: rgb(255, 182, 47);
-  height:700px;
+  background-color: black;
+  color: white;
+  min-height: 500px;
+  padding-bottom: 80px;
 }
 .about h1{
-  color: black;
+  color: white;
   font-size: 35px;
+  max-width: 300px;
+  padding-top: 40px;
+  padding-left: 40px;
 }
-.about .about-content{
-  background-color: #f4f4f4;
+.about .values img{
+  width:300px;
+  height:300px;
+}
+.about .values .abt-container{
+  width:800px;
+  padding-top: 40px;
+  margin-left:auto;
+  margin-right:50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .values .abt-container .about-content{
+  background:transparent;
   border-radius: 20px;
-  border-color: black;
-  border-width: 3px;
-  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 60px;
-  margin-left: 70px;
-  margin-bottom: 100px;
-  padding: 40px;
-  width: 83%;
-  height: 300px;
+  margin-top: 30px;
+  max-width: 83%; 
+  height: auto;
+  box-sizing: border-box;
 } 
-.about .about-content p{
+.about .values .abt-container .about-content p{
   line-height: 40px;
+  font-size: 20px;
+  margin: 20px;
 }
-.about .about-img{
+.about .values .about-img{
   margin-left: 20px;
   width: 30px;
   height: 30px;
 }
 .projects{
-  padding-left: 90px;
-  padding-top: 100px;
+  padding: 90px 5%;
   background-color: antiquewhite;
-  height: 750px;
+  min-height: 750px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.projects .project-content{
+  width: 100%;
 }
 .projects h1{
   color: rgb(255, 145, 0);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .projects .project-img{
-  margin-left: 20px;
   width: 30px;
   height: 30px;
 }
-.projects .project-images{
+.projects .project-content .project-images{
   display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 40px;
   margin-top: 20px;
+  width: 100%;
 }
-.projects .project-images .imgs{
+.projects .project-content .project-images .imgs{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-radius: 20px;
-  border-width: 3px;
-  border-color: orange;
+  max-width: 350px; 
+  text-align: center;
 }
-.projects .project-images img{
-  margin-left: 75px;
-  margin-top: 50px;
-  width: 350px;
+.projects .project-content .project-images img{
+  width: 100%;
+  max-width: 350px;
   height: 300px;
   border-radius: 20px;
+  transition: transform 0.3s;
 }
-.projects .project-images p{
-  width: 350px;
-  margin-left: 75px;
-  margin-top: 30px;
-  font-weight:500;
+.projects .project-content .project-images img:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.projects .project-content .project-images p{
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+  font-weight: 500;
+}
+.projects .project-content .project-images button{
+  width: 200px;
+  height: 40px;
+  color: black;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid rgb(248, 18, 87);
+  color: rgb(248, 18, 87);
+  border-radius: 30px;
+}
+.projects .project-content .project-images button:hover{
+  cursor: pointer;
+  background-color: rgb(248, 18, 87);
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+  border: 2px solid white;
 }
 .skills{
-  padding-left: 90px;
-  padding-top: 100px;
   height: 900px;
 }
-.skills h1{
-  font-size: 50px;
-}
-.skills img{
-  margin-left: 160px;
-  width: 1000px;
-  height: 600px;
-}
 .achievements{
-  padding-left: 90px;
   padding-top: 100px;
+  padding-left: 90px;
+  padding-right: 40px;
   background-color: rgb(255, 204, 102);
-  height:580px;
+  height:auto;
+  padding-bottom: 70px;
 }
 .achievements .achievement-head{
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 .achievements .achievement-img{
   width:50px;
@@ -198,9 +245,14 @@
   margin-left: 20px;
   border-radius: 40px;
 }
-.achievements .achievement-list{
-  margin-left: 250px;
-  margin-top: 50px;
+.achievements .achievement-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.achievements .achievement-container .achievement-list{
   line-height: 60px;
   font-size: 20px;
 }
@@ -211,13 +263,9 @@
   flex-direction: column;
   height: 300px;
   justify-content: center;
-}
-.contact h2{
-  margin-top: 30px;
-  margin-left: 47%;
+  align-items: center;
 }
 .contact .contact-content{
-  margin-left: 340px;
   height: 100px;
   display: flex;
   gap: 20px;
@@ -225,4 +273,117 @@
 }
 .contact .contact-content a{
   color: white;
+}
+
+@media (min-width: 1024px){
+  .skills{
+    max-height: 650px;
+  }
+  .skills img{
+    padding-left: 450px;
+    width: 1200px;
+    height: 400px;
+  }
+  .skills h1{
+    font-size: 50px;
+    padding-top: 70px;
+    padding-left: 100px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills{
+    max-height: 550px;
+  }
+  .about .abt-container .about-content {
+    width: 95%; /* Increase width for better wrapping */
+    font-size: 18px; /* Reduce font size slightly */
+  }
+  .about .abt-container .about-content p{
+    font-size: 20px;
+    margin: 30px;
+  }
+  .skills h1{
+    padding-top: 50px;
+    padding-left: 80px;
+  }
+  .skills img{
+    padding-left: 150px;
+    width: 900px;
+    height: 400px;
+  }
+  .contact .contact-content{
+    height: 100px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about .abt-container .about-content {
+    width: 95%; /* Almost full width on smaller screens */
+    font-size: 16px; /* Further reduce font size for readability */
+    padding: 30px;
+  }
+  .about .abt-container .about-content p{
+    font-size: 20px;
+    margin: 10px;
+  }
+  .skills{
+    max-height: 620px;
+  }
+  .skills img{
+    padding-left: 10px;
+    width: 700px;
+    height: 450px;
+  }
+  .achievements .achievement-head{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  .contact .contact-content{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    height: 100px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about .abt-container .about-content {
+    width: 99%; /* Take up almost full width */
+    font-size: 14px; /* Smaller font for mobile */
+  }
+  .about .abt-container .about-content p{
+    font-size: 17px;
+    margin: 3px;
+  }
+  .skills{
+    max-height: 500px;
+  }
+  .skills h1{
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+  .skills img{
+    width: 500px;
+    height: 350px;
+  }
+  .achievements .achievement-head{
+    display: flex;
+    align-items: center;
+    padding-left: 1px;
+  }
+  .achievements .achievement-container .achievement-list{
+    line-height: 40px;
+    font-size: 17px;
+  }
 }

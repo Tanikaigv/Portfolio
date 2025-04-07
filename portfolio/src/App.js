@@ -23,9 +23,10 @@ function App() {
       </header>
 
       <div className="home-content" id="home">
+        <div className="home-div">
         <aside className="details">
           <h1>Hey, I'm <span className="name">Tanikaiselvan</span></h1>
-          <p>I am a passionate Frontend Developer focusing on creating interactive webpages</p>
+          <p>I am a passionate MERN Developer excited on creating web applications</p>
           <a href="https://drive.google.com/file/d/1faBhwImM9w7KcAnMk4q7VVml0JmiZt4V/view?usp=sharing"><button>Resume</button></a>
           <div className="logos">
             <a href="https://github.com/Tanikaigv"><img src={gitHub}/></a>
@@ -34,11 +35,15 @@ function App() {
           </div>
         </aside>
         <img src={tanikaiPic}/>
+        </div>
       </div>
           <br/><br/><br/><br/><br/><br/><br/><hr/>
       <div className="about" id="abt">
         <h1>About Me</h1>
         <div className="values">
+          <div className="image">
+          <img src={abt}/>
+          </div>
         <div className="abt-container">
         <div className="about-content">
           <p>
@@ -47,7 +52,6 @@ function App() {
             I have successfully completed two internships and worked on multiple web development projects, 
             showcasing my expertise in creating responsive and dynamic web applications.
             I am actively seeking opportunities as a Frontend Developer, React Developer, or Full Stack Developer to contribute my skills and grow further in the field of web development.
-            
           </p>
         </div>
         </div>
@@ -84,7 +88,9 @@ function App() {
       
       <div className="skills" id="skls">
         <h1>Skills</h1>
+        <div className="skill-img">
         <img src={skills}/>
+        </div>
       </div>
 
       <div className="achievements" id="achvmnts">

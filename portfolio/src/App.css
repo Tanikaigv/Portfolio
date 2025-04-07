@@ -39,24 +39,34 @@
   margin-right: 30px; 
 }
 .home-content{
-  display: flex;
+  margin: 10px;
+  text-align: center;
+  max-width: 95%;
 }
-.home-content .details{
-  width: 350px;
-  margin-left: auto;
+.home-content .home-div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.home-content .home-div img{
+  border-radius: 40%;
+}
+.home-content .home-div .details{
   margin-top: 150px;
   font-size: 20px;
-  display: inline-block;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.home-content .details h1{
+.home-content .home-div .details h1{
   font-size: 45px;
   width: 500px;
 }
 .name{
   color: orange;
 }
-.home-content .details button{
+.home-content .home-div .details button{
   margin-top: 50px;
   height: 50px;
   width:120px;
@@ -94,12 +104,7 @@
   border-style: solid;
   transition: 0.1s;
 }
-.home-content img{
-  margin-top: 35px;
-  margin-right: 180px;
-  margin-left: auto;
-  border-radius: 40%;
-}
+
 .about{
   background-color: black;
   color: white;
@@ -118,14 +123,18 @@
   padding-left: 40px;
 }
 .about .values img{
-  width:300px;
-  height:300px;
+  width:450px;
+  height:450px;
+}
+.about .values{
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .about .values .abt-container{
-  width:100%;
+  width:800px;
   padding-top: 40px;
-  /* margin-left:auto;
-  margin-right:50px; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -136,7 +145,7 @@
   background:transparent;
   border-radius: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 30px;
+  margin-top: 10px;
   max-width: 83%; 
   height: auto;
   box-sizing: border-box;
@@ -283,9 +292,16 @@
   .skills{
     max-height: 650px;
   }
+  .skill-img{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .skills img{
-    padding-left: 450px;
-    width: 1200px;
+    margin: 10px;
+    max-width: 1200px;
+    width: auto;
     height: 400px;
   }
   .skills h1{
@@ -296,8 +312,31 @@
 }
 
 @media (max-width: 1024px) {
+  .home-content .home-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-content img{
+    margin-top: 80px;
+    width: 370px;
+    height: 370px;
+  }
+  .about .values{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .skills{
     max-height: 550px;
+    height: auto;
+  }
+  .skill-img{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .about .abt-container .about-content {
     width: 95%; /* Increase width for better wrapping */
@@ -312,7 +351,7 @@
     padding-left: 80px;
   }
   .skills img{
-    padding-left: 150px;
+    padding-left: 0px;
     width: 900px;
     height: 400px;
   }
@@ -326,14 +365,23 @@
 }
 
 @media (max-width: 768px) {
-  .about .abt-container .about-content {
-    width: 95%; /* Almost full width on smaller screens */
-    font-size: 16px; /* Further reduce font size for readability */
-    padding: 30px;
+  .about .values .abt-container{
+    text-align: center;
+    max-width: 1000px;
+    width: auto;
+    height: auto;
+  } 
+  .about .values .abt-container .about-content{
+    max-width: fit-content;
+    width: auto;
   }
-  .about .abt-container .about-content p{
-    font-size: 20px;
-    margin: 10px;
+  .about .values .abt-container .about-content p{
+    font-size: 15px;    
+  }
+  .about .values img{
+    margin-top: 10px;
+    width:250px;
+    height:250px;
   }
   .skills{
     max-height: 620px;
@@ -361,7 +409,68 @@
   }
 }
 
+@media (max-width: 650px){
+  .header .routes{
+    visibility: hidden;
+  }
+  .header{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+  .header h1 {
+    font-size: 35px;
+    margin-top: 15px;
+    color: orange;
+  }
+}
+
+@media (max-width: 620px){
+  .header .routes ul{
+    gap: 4px;
+    margin-left: 20px;
+    margin-right: auto;
+  }
+  .home-content .home-div .details{
+    margin-top: 90px;
+  }
+  .home-content .home-div .details{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+  .home-content .home-div .details{
+    font-size: 17px;
+  }
+  .home-content .home-div .details h1{
+    font-size: 35px;
+  }
+}
+
 @media (max-width: 480px) {
+  .header{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+  .header h1 {
+    font-size: 35px;
+    margin-top: 15px;
+    color: orange;
+  }
+  .header .routes{
+    visibility: hidden;
+  }
+  .home-div img{
+    width: 250px;
+    height: 250px;
+  }
   .about .abt-container .about-content {
     width: 99%; /* Take up almost full width */
     font-size: 14px; /* Smaller font for mobile */

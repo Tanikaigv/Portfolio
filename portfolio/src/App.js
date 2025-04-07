@@ -37,9 +37,8 @@ function App() {
       </div>
           <br/><br/><br/><br/><br/><br/><br/><hr/>
       <div className="about" id="abt">
-        <h1>About Me<img src="https://imgs.search.brave.com/Ydqi_VZHGZsud9pHe4-x1mRWkfz4Ny_47znPr4QE3LI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jbGlw/YXJ0LWxpYnJhcnku/Y29tL2ltZzEvNjk5/OTE1LnBuZw" className="about-img"/></h1>
+        <h1>About Me</h1>
         <div className="values">
-          <img src={abt}/>
         <div className="abt-container">
         <div className="about-content">
           <p>

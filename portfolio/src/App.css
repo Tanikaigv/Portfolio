@@ -38,6 +38,9 @@
 .header .routes {
   margin-right: 30px; 
 }
+.respic{
+  visibility: hidden;
+}
 .home-content{
   margin: 10px;
   text-align: center;
@@ -45,15 +48,20 @@
 }
 .home-content .home-div{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 .home-content .home-div img{
   border-radius: 40%;
+  object-fit: contain;
+  order: 2;
 }
 .home-content .home-div .details{
   margin-top: 150px;
   font-size: 20px;
+  flex: 1;
+  order: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +112,32 @@
   border-style: solid;
   transition: 0.1s;
 }
+
+/* .home-content .home-div .details h1{
+  overflow: hidden;             
+  border-right: 2px solid white; 
+  white-space: nowrap;          
+  margin: 0 auto;
+  letter-spacing: 2px;
+  animation: typing 1.5s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+.home-content .home-div .details p{
+  overflow: hidden;             
+  white-space: nowrap;          
+  letter-spacing: 2px;
+  animation: typing 2s steps(50, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+} */
 
 .about{
   background-color: black;
@@ -288,6 +322,42 @@
   color: white;
 }
 
+@keyframes appear{
+  from{
+    opacity:0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.home-content{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.about{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.projects{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.skills{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.achievements{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 @media (min-width: 1024px){
   .skills{
     max-height: 650px;
@@ -317,10 +387,15 @@
     flex-direction: column;
     align-items: center;
   }
-  .home-content img{
-    margin-top: 80px;
-    width: 370px;
-    height: 370px;
+  .home-content .home-div .details {
+    order: 2; 
+    margin-top: 45px;
+  }
+
+  .home-content .home-div img {
+    order: 1; 
+    width: 300px;
+    height: 300px;
   }
   .about .values{
     display: flex;
@@ -365,6 +440,14 @@
 }
 
 @media (max-width: 768px) {
+  .home-content .home-div {
+    flex-direction: column; 
+    text-align: center;
+  }
+
+  .home-content .home-div .details {
+    order: 2; 
+  }
   .about .values .abt-container{
     text-align: center;
     max-width: 1000px;
@@ -434,15 +517,14 @@
     margin-left: 20px;
     margin-right: auto;
   }
-  .home-content .home-div .details{
-    margin-top: 90px;
+  .home-content .home-div .details .resume-btn{
+    width: 90px;
   }
   .home-content .home-div .details{
+    margin-top: 90px;
     max-width: 100%;
     width: auto;
     height: auto;
-  }
-  .home-content .home-div .details{
     font-size: 17px;
   }
   .home-content .home-div .details h1{
@@ -462,14 +544,18 @@
   .header h1 {
     font-size: 35px;
     margin-top: 15px;
-    color: orange;
+    color: rgb(255, 132, 0);
   }
   .header .routes{
     visibility: hidden;
   }
-  .home-div img{
-    width: 250px;
-    height: 250px;
+  .home-content .home-div img{
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+  }
+  .home-content .home-div .details{
+    margin-top: 25px;
   }
   .about .abt-container .about-content {
     width: 99%; /* Take up almost full width */

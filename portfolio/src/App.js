@@ -7,7 +7,7 @@ import instagram from './instagram.png';
 import abt from './abt_ill.jpg';
 function App() {
   return (
-    <div>
+    <div className="parent">
       <header className="header">
       <h1>Portfolio</h1>
       <div className="routes">
@@ -26,8 +26,8 @@ function App() {
         <div className="home-div">
         <aside className="details">
           <h1>Hey, I'm <span className="name">Tanikaiselvan</span></h1>
-          <p>I am a passionate MERN Developer excited on creating web applications</p>
-          <a href="https://drive.google.com/file/d/1faBhwImM9w7KcAnMk4q7VVml0JmiZt4V/view?usp=sharing"><button>Resume</button></a>
+          <p>I am a passionate MERN Developer excited on creating dynamic web applications</p>
+          <a href="https://drive.google.com/file/d/1faBhwImM9w7KcAnMk4q7VVml0JmiZt4V/view?usp=sharing"><button className="resume-btn">Resume</button></a>
           <div className="logos">
             <a href="https://github.com/Tanikaigv"><img src={gitHub}/></a>
             <a href="https://www.linkedin.com/in/tanikaiselvan-g/"><img src={linkedIn}/></a>
@@ -100,8 +100,8 @@ function App() {
         </div>
         <div className="achievement-container">
         <ul className="achievement-list">
-          <li> Accomplished the resolution over 400 + diverse and challenging problems</li>
-          <li> Successfully tackled more than 90+ problems, achieved a contest rating of 1280</li>
+          <li> Accomplished the resolution over 400 + diverse and challenging problems in Code Chef</li>
+          <li> Successfully tackled more than 90+ problems, achieved a contest rating of 1280 in Leetcode</li>
           <li> Accredited in React JS bootcamp, exhibiting expertise in constructing dynamic user interfaces</li>
           <li> Conceptualized UI & UX utilizing Figma, demonstrating expertise through 5+ real-world projects</li>
           <li> Concluded a comprehensive Web Development Internship, expertise in HTML, CSS,JavaScript.</li>

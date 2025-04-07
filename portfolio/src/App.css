@@ -332,31 +332,16 @@
     scale: 1;
   }
 }
-
-.home-content{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-.about{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-.projects{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-.skills{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
-.achievements{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+@supports (animation-timeline: view()) {
+  .home-content,
+  .about,
+  .projects,
+  .skills,
+  .achievements {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
 }
 @media (min-width: 1024px){
   .skills{

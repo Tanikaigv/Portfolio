@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.3c09be9a.css",
-    "main.js": "/Portfolio/static/js/main.f5af6737.js",
+    "main.css": "/Portfolio/static/css/main.66a04d72.css",
+    "main.js": "/Portfolio/static/js/main.f7b627a7.js",
     "static/js/453.1407b060.chunk.js": "/Portfolio/static/js/453.1407b060.chunk.js",
     "static/media/abt_ill.jpg": "/Portfolio/static/media/abt_ill.c73e44c639bcd1d6f9d4.jpg",
     "static/media/Tanikai-pic.png": "/Portfolio/static/media/Tanikai-pic.f566e8daf3de9624d4ef.png",
@@ -10,12 +10,12 @@
     "static/media/instagram.png": "/Portfolio/static/media/instagram.0a27ca7baf4219a1deab.png",
     "static/media/linkedIn.png": "/Portfolio/static/media/linkedIn.d1c78fa50b1f5b49aa19.png",
     "index.html": "/Portfolio/index.html",
-    "main.3c09be9a.css.map": "/Portfolio/static/css/main.3c09be9a.css.map",
-    "main.f5af6737.js.map": "/Portfolio/static/js/main.f5af6737.js.map",
+    "main.66a04d72.css.map": "/Portfolio/static/css/main.66a04d72.css.map",
+    "main.f7b627a7.js.map": "/Portfolio/static/js/main.f7b627a7.js.map",
     "453.1407b060.chunk.js.map": "/Portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c09be9a.css",
-    "static/js/main.f5af6737.js"
+    "static/css/main.66a04d72.css",
+    "static/js/main.f7b627a7.js"
   ]
 }

@@ -1,65 +1,190 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Fade-in animation for all sections on scroll
+    const sections = gsap.utils.toArray("section");
+
+    sections.forEach((section) => {
+      gsap.fromTo(
+        section,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Header Section - Fixed at top */}
+      <header className="fixed top-0 left-0 right-0 bg-transparent z-50 pt-6 px-4">
+        <nav className="max-w-3xl mx-auto px-6 py-4 bg-[#262629] opacity-80 rounded-full">
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex justify-center gap-6 lg:gap-6 xl:gap-10">
+            <li>
+              <a
+                href="#about"
+                className="px-2 py-2 text-[1.1500rem] text-white hover:underline underline-offset-4 transition-all duration-300 inline-block"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#experience"
+                className="px-4 py-2 text-[1.1500rem] text-white hover:underline underline-offset-4 transition-all duration-300 inline-block"
+              >
+                Experience
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className="px-4 py-2 text-[1.1500rem] text-white hover:underline underline-offset-4 transition-all duration-300 inline-block"
+              >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="px-4 py-2 text-[1.1500rem] text-white hover:underline underline-offset-4 transition-all duration-300 inline-block"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="px-4 py-2 text-[1.1500rem] text-white hover:underline underline-offset-4 transition-all duration-300 inline-block"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          {/* Mobile Hamburger Menu */}
+          <div className="md:hidden flex justify-between items-center">
+            <h2 className="text-white text-xl font-semibold">Portfolio</h2>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white focus:outline-none cursor-pointer"
+              aria-label="Toggle menu"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-2 mx-4">
+            <ul className="bg-[#262629] rounded-2xl py-4 px-6 space-y-3">
+              <li>
+                <a
+                  href="#about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[1.0625rem] text-white hover:underline underline-offset-4 transition-all duration-300 block"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[1.0625rem] text-white hover:underline underline-offset-4 transition-all duration-300 block"
+                >
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[1.0625rem] text-white hover:underline underline-offset-4 transition-all duration-300 block"
+                >
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[1.0625rem] text-white hover:underline underline-offset-4 transition-all duration-300 block"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[1.0625rem] text-white hover:underline underline-offset-4 transition-all duration-300 block"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </header>
+
+      {/* Main Content - Add padding-top to account for fixed header */}
+      <main className="pt-16">
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
-    </div>
+    </>
   );
 }
